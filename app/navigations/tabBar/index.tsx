@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     height: tabBarHeight,
     backgroundColor: colors.background.secondary,
     borderTopWidth: 1,
-    borderTopColor: colors.text.placeholder,
+    borderTopColor: colors.separator.opaque,
   },
   tabsContainer: {
     ...StyleSheet.absoluteFillObject,

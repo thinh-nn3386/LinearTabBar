@@ -1,11 +1,8 @@
 export const colors = {
-  transparent: 'transparent',
   text: {
     primary: '#FFFFFF',
     secondary: '#8E8E93',
     placeholder: '#636366',
-    link: '#0984FF',
-    
   },
   background: {
     black: '#000000',
@@ -23,12 +20,5 @@ export const colors = {
     gray4: '#3A3A3C',
     gray5: '#2C2C2E',
     gray6: '#1C1C1E',
-  },
-
-  support: {
-    success: '#34C759',
-    warning: '#FF9500',
-    lighterWarning: '#FF9F0A',
-    error: '#FF3B30',
   },
 };
