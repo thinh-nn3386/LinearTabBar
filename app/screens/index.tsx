@@ -1,12 +1,8 @@
 import {Screen} from '../components/Screen';
 import {colors} from '../theme';
+export * from './Home';
+export * from './NoteDetail';
 
-export function Home() {
-  return <Screen title="Home" />;
-}
-export function NoteDetail() {
-  return <Screen title="Note Detail" />;
-}
 export function NoteActions() {
   return <Screen title="Note Actions" />;
 }
