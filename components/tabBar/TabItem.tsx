@@ -1,16 +1,24 @@
 import {StyleSheet, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, { useCallback } from 'react';
 import {colors} from '../../theme';
+import { Icon, IconTypes } from '../Icon';
+import { useRouter } from 'expo-router';
 
 type TabItemProps = {
   icon: IconTypes;
-  path: () => void;
+  path: string;
   isActive: boolean;
 };
 
-export const TabItem = ({icon, action, isActive}: TabItemProps) => {
+export const TabItem = ({icon, path, isActive}: TabItemProps) => {
+  const router = useRouter()
+  
+  const onPress = useCallback(() => {
+    router.navigate(path as never)
+  }, [path, router])
+
   return (
-    <TouchableOpacity onPress={action} style={styles.fillCenter}>
+    <TouchableOpacity onPress={onPress} style={styles.fillCenter}>
       <Icon
         icon={(isActive ? icon + '-fill' : icon) as IconTypes}
         size={24}

@@ -19,7 +19,7 @@ export const TabBar = ({activeScreenName}: TabBarProps) => {
             <TabItem
               key={screen.id}
               icon={screen.icon as IconTypes}
-              action={screen.path}
+              path={screen.id}
               isActive={screen.id === activeScreenName}
             />
           );

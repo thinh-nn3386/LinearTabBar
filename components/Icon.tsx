@@ -66,19 +66,19 @@ export function Icon(props: IconProps) {
 }
 
 export const iconRegistry = {
-  'arrow-left': require('../../assets/arrow-left.png'),
-  'inbox-fill': require('../../assets/chat-fill.png'),
-  inbox: require('../../assets/chat.png'),
-  'settings-fill': require('../../assets/gear-six-fill.png'),
-  settings: require('../../assets/gear-six.png'),
-  'home-fill': require('../../assets/house-fill.png'),
-  home: require('../../assets/house.png'),
-  'list-fill': require('../../assets/list-fill.png'),
-  list: require('../../assets/list.png'),
-  'search-fill': require('../../assets/magnifying-glass-fill.png'),
-  search: require('../../assets/magnifying-glass.png'),
-  'note-fill': require('../../assets/note-pencil-fill.png'),
-  note: require('../../assets/note-pencil.png'),
+  'arrow-left': require('../assets/icons/arrow-left.png'),
+  'inbox-fill': require('../assets/icons/chat-fill.png'),
+  inbox: require('../assets/icons/chat.png'),
+  'settings-fill': require('../assets/icons/gear-six-fill.png'),
+  settings: require('../assets/icons/gear-six.png'),
+  'home-fill': require('../assets/icons/house-fill.png'),
+  home: require('../assets/icons/house.png'),
+  'list-fill': require('../assets/icons/list-fill.png'),
+  list: require('../assets/icons/list.png'),
+  'search-fill': require('../assets/icons/magnifying-glass-fill.png'),
+  search: require('../assets/icons/magnifying-glass.png'),
+  'note-fill': require('../assets/icons/note-pencil-fill.png'),
+  note: require('../assets/icons/note-pencil.png'),
 };
 
 const $imageStyleBase: ImageStyle = {

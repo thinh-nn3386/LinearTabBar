@@ -1,12 +1,12 @@
 
 export const NoteTab = {
   icon: 'note',
-  id: 'notes',
+  id: 'note',
 };
 
 export const BaseTabs = [
   {
-    id: 'homeStack',
+    id: '(home-stack)',
     icon: 'home',
   },
   {

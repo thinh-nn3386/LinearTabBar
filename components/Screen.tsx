@@ -3,13 +3,12 @@ import { colors } from '../theme'
 
 interface ScreenProps {
   title: string
+  backgroundColor?: string
 }
 
-export const Screen = ({ title }: ScreenProps) => {
+export const Screen = ({ title, backgroundColor=colors.systemGray.gray6 }: ScreenProps) => {
   return (
-    <View
-      style={$container}
-    >
+    <View style={[$container, { backgroundColor }]}>
       <Text style={$text}>{title}</Text>
     </View>
   )
