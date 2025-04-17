@@ -1,9 +1,9 @@
 import * as nav from '../navigationUtilities';
 
-export const NoteTab = {
+const NoteTab = {
   action: nav.openNote,
   icon: 'note',
-  id: 'notes',
+  id: 'note',
 };
 
 export const BaseTabs = [
@@ -27,5 +27,38 @@ export const BaseTabs = [
     action: nav.navigateSettingTab,
     id: 'settings',
     icon: 'settings',
+  },
+] as const;
+
+const Empty = '';
+
+const EmptyTab = {
+  action: () => {},
+  id: Empty,
+  icon: Empty,
+};
+
+export const UnderLayerTabs = [
+  EmptyTab,
+  EmptyTab,
+  NoteTab,
+  EmptyTab,
+  EmptyTab,
+] as const;
+
+export const TopLayerTabs = [
+  {
+    action: nav.goBack,
+    id: 'goBack',
+    icon: 'arrow-left',
+  },
+  EmptyTab,
+  NoteTab,
+  EmptyTab,
+  {
+    action: () => {},
+    // action: nav.openNoteAction,
+    id: 'list',
+    icon: 'list',
   },
 ] as const;

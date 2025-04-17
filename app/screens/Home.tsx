@@ -4,8 +4,23 @@ import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
 import {colors} from '../theme';
 import {Screen} from '../components';
 
+import {useReanimatedTransitionProgress} from 'react-native-screens/reanimated';
+import {useAnimatedReaction} from 'react-native-reanimated';
+import {SharedTransitionProgress} from '../hook/useSharedProgress';
+
 export const Home = () => {
   const navigation = useNavigation();
+
+  const {progress, goingForward} = useReanimatedTransitionProgress();
+
+  useAnimatedReaction(
+    () => progress.value,
+    value => {
+      SharedTransitionProgress.value = goingForward.value ? value : 1 - value;
+    },
+    [],
+  );
+
   const onPress = useCallback(() => {
     navigation.navigate('noteDetail' as never);
   }, [navigation]);

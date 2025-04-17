@@ -8,6 +8,16 @@ function navigate(params: unknown) {
   }
 }
 
+export function goBack() {
+  if (navigationRef.isReady() && navigationRef.canGoBack()) {
+    navigationRef.goBack();
+  }
+}
+
+export const openNoteAction = () => {
+  navigate('noteAction');
+};
+
 export const navigateHomeTab = () => {
   navigate({
     name: 'tabs',

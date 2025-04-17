@@ -1,11 +1,12 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {useCallback} from 'react';
+import React, {useCallback} from 'react';
 import * as Screens from '../screens';
 import {DarkTheme, NavigationContainer} from '@react-navigation/native';
 import {TabBar} from './tabBar';
 import {navigationRef} from './navigationUtilities';
+import {ReanimatedScreenProvider} from 'react-native-screens/reanimated';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -38,22 +39,30 @@ function TabNavigator() {
 
 export function AppStack() {
   return (
-    <NavigationContainer ref={navigationRef} theme={DarkTheme}>
-      <Stack.Navigator
-        initialRouteName="tabs"
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="tabs" component={TabNavigator} />
-        <Stack.Screen
-          name="note"
-          component={Screens.Note}
-          options={{
-            presentation: 'modal',
-          }}
-        />
-        <Stack.Screen name="noteAction" component={Screens.NoteActions} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ReanimatedScreenProvider>
+      <NavigationContainer ref={navigationRef} theme={DarkTheme}>
+        <Stack.Navigator
+          initialRouteName="tabs"
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen name="tabs" component={TabNavigator} />
+          <Stack.Screen
+            name="note"
+            component={Screens.Note}
+            options={{
+              presentation: 'modal',
+            }}
+          />
+          <Stack.Screen
+            name="noteAction"
+            component={Screens.NoteActions}
+            options={{
+              presentation: 'transparentModal',
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ReanimatedScreenProvider>
   );
 }
