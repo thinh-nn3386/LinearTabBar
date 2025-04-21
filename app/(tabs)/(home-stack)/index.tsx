@@ -2,12 +2,27 @@ import { colors } from "@/theme";
 import { useRouter } from "expo-router";
 import { useCallback } from "react";
 import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import {useReanimatedTransitionProgress} from 'react-native-screens/reanimated';
+import {useAnimatedReaction} from 'react-native-reanimated';
+import { SharedTransitionProgress } from "@/hook/useSharedProgress";
+
 
 export default function Home() {
   const router = useRouter();
   const onPress = useCallback(() => {
     router.navigate("/note-detail");
   }, [router]);
+
+  const {progress, goingForward} = useReanimatedTransitionProgress();
+
+  useAnimatedReaction(
+    () => progress.value,
+    value => {
+      SharedTransitionProgress.value = goingForward.value ? value : 1 - value;
+    },
+    [],
+  );
+
   
   return (
     <View style={styles.container}>

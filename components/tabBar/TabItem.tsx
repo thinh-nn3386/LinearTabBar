@@ -15,6 +15,10 @@ export const TabItem = ({icon, path, isActive, opacity = 1}: TabItemProps) => {
   const router = useRouter()
   
   const onPress = useCallback(() => {
+    if (path === "home") {
+      router.back()
+      return
+    }
     router.navigate(path as never)
   }, [path, router])
 

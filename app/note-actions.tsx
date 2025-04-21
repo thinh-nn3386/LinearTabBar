@@ -2,7 +2,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../theme';
 import {useNavigation} from '@react-navigation/native';
 
-export function NoteActions() {
+export default function NoteActions() {
   const navigation = useNavigation();
   const actions = [
     {

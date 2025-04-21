@@ -23,3 +23,33 @@ export const BaseTabs = [
     icon: 'settings',
   },
 ] as const;
+
+
+const Empty = '';
+
+const EmptyTab = {
+  id: Empty,
+  icon: Empty,
+};
+
+export const UnderLayerTabs = [
+  EmptyTab,
+  EmptyTab,
+  NoteTab,
+  EmptyTab,
+  EmptyTab,
+] as const;
+
+export const TopLayerTabs = [
+  {
+    id: 'home',
+    icon: 'arrow-left',
+  },
+  EmptyTab,
+  NoteTab,
+  EmptyTab,
+  {
+    id: 'note-actions',
+    icon: 'list',
+  },
+] as const;
