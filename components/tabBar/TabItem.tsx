@@ -8,9 +8,10 @@ type TabItemProps = {
   icon: IconTypes;
   path: string;
   isActive: boolean;
+  opacity?: number;
 };
 
-export const TabItem = ({icon, path, isActive}: TabItemProps) => {
+export const TabItem = ({icon, path, isActive, opacity = 1}: TabItemProps) => {
   const router = useRouter()
   
   const onPress = useCallback(() => {
@@ -18,7 +19,7 @@ export const TabItem = ({icon, path, isActive}: TabItemProps) => {
   }, [path, router])
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.fillCenter}>
+    <TouchableOpacity onPress={onPress} style={[styles.fillCenter, {opacity}]}>
       <Icon
         icon={(isActive ? icon + '-fill' : icon) as IconTypes}
         size={24}

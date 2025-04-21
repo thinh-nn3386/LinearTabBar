@@ -14,13 +14,16 @@ export default function AppLayout() {
   }, );
 
   return (
-    <ThemeProvider value={DarkTheme}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="note" options={{
-          presentation: "modal"
-        }}/>
-      </Stack>
-    </ThemeProvider>
+      <ThemeProvider value={DarkTheme}>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="note" options={{
+            presentation: "modal"
+          }}/>
+          <Stack.Screen name="note-actions" options={{
+            presentation: "modal"
+          }}/>
+        </Stack>
+      </ThemeProvider>
   );
 }
