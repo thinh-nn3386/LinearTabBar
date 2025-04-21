@@ -2,10 +2,8 @@ import {Screen} from '../components/Screen';
 import {colors} from '../theme';
 export * from './Home';
 export * from './NoteDetail';
+export * from './NoteActions';
 
-export function NoteActions() {
-  return <Screen title="Note Actions" />;
-}
 export function Inbox() {
   return <Screen title="Inbox" />;
 }

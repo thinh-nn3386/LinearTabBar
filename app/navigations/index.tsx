@@ -52,7 +52,13 @@ export function AppStack() {
             presentation: 'modal',
           }}
         />
-        <Stack.Screen name="noteAction" component={Screens.NoteActions} />
+        <Stack.Screen
+          name="noteAction"
+          component={Screens.NoteActions}
+          options={{
+            presentation: 'transparentModal',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

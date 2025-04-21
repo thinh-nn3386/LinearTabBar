@@ -7,11 +7,17 @@ type TabItemProps = {
   icon: IconTypes;
   action: () => void;
   isActive: boolean;
+  opacity?: number;
 };
 
-export const TabItem = ({icon, action, isActive}: TabItemProps) => {
+export const TabItem = ({
+  icon,
+  action,
+  isActive,
+  opacity = 1,
+}: TabItemProps) => {
   return (
-    <TouchableOpacity onPress={action} style={styles.fillCenter}>
+    <TouchableOpacity onPress={action} style={[styles.fillCenter, {opacity}]}>
       <Icon
         icon={(isActive ? icon + '-fill' : icon) as IconTypes}
         size={24}

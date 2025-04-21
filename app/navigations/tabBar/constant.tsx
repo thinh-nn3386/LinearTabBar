@@ -3,7 +3,7 @@ import * as nav from '../navigationUtilities';
 export const NoteTab = {
   action: nav.openNote,
   icon: 'note',
-  id: 'notes',
+  id: 'note',
 };
 
 export const BaseTabs = [
